@@ -1,2 +1,2 @@
-# top-trumps
+# top_trumps
 football stats
