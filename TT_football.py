@@ -1,19 +1,19 @@
 import random, os, time
 print("Top Trumps\n ----------------------")
 
-print("The category is Premier league football players")
-time.sleep(5)
-os.system("clear")
+
+
 def prettyprint():
   
      print(f"Name\tSpeed\tDefending\tShooting")
      print("-" *60)
 
-     for players, value in pfootball["players"].items():
-        print(f"{players:<15}\t\t{value['Speed']}\t{value['Defending']}\t{value['Shooting']}")
+     for players, value in PFOOTBALL["players"].items():
+        print(f"{players:<15}\t\t{value['Speed']}\t{value['Defending']}\t{value['Shooting']}\n")
 
-pfootball = {
-    "players": {
+
+
+PFOOTBALL = {
         "Alexander Isak": {"Shooting": 85, "Speed": 88, "Defending": 50},
         "Emili martinez": {"Shooting": 20, "Speed": 40, "Defending": 90},
         "Bruno Fernandes": {"Shooting": 90, "Speed": 75, "Defending": 65},
@@ -24,39 +24,51 @@ pfootball = {
         "Son Heung-min": {"Shooting": 89, "Speed": 90, "Defending": 50},
         "Bernardo Silva": {"Shooting": 85, "Speed": 80, "Defending": 65}
   }
-}
+
+
+print("The category is Premier league football players")
+time.sleep(5)
+os.system("clear")
 
 prettyprint()
-print()
+
+prettyprint()
 print("Loading game")
-time.sleep(8)
+
+
+time.sleep(3)
 os.system("clear")
 while True:
   print("Choosing your player\n")
-  player = random.choice(list(pfootball["players"].keys()))
-  oplayer = random.choice(list(pfootball["players"].keys()))
+  
+  player = random.sample(list(PFOOTBALL.keys())2)
+  oplayer = random.sample(list(PFOOTBALL.keys())2)
+
   if oplayer != player:
-    for players, value in pfootball.items():
+
+    for players, in PFOOTBALL.items():
       print(f"You're {player}\n")
-      print(f"Speed: {pfootball['players'][player]['Speed']}\n")
-      print(f"Defending: {pfootball['players'][player]['Defending']}\n")
-      print(f"Shooting:  {pfootball['players'][player]['Shooting']}")
+
+
+
+      print(f"Speed: {PFOOTBALL[player]['Speed']}\n")
+      print(f"Defending: {PFOOTBALL[player]['Defending']}\n")
+      print(f"Shooting:  {PFOOTBALL[player]['Shooting']}")
       print()
       print(f"Opponent {oplayer}\n")
-      print(f"Speed: {pfootball['players'][oplayer]['Speed']}\n")
-      print(f"Defending: {pfootball['players'][oplayer]['Defending']}\n")
-      print(f"Shooting: {pfootball['players'][oplayer]['Shooting']}\n")
+      print(f"Speed: {PFOOTBALL[oplayer]['Speed']}\n")
+      print(f"Defending: {PFOOTBALL[oplayer]['Defending']}\n")
+      print(f"Shooting: {PFOOTBALL[oplayer]['Shooting']}\n")
   
-      
+
       if (
-          
-        pfootball['players'][player]['Speed'] + 
-        pfootball['players'][player]['Shooting'] + 
-        pfootball['players'][player]['Defending']
+        PFOOTBALL[player]['Speed'] + 
+        PFOOTBALL[player]['Shooting'] + 
+        PFOOTBALL[player]['Defending']
                    >
-        pfootball['players'][oplayer]['Speed'] + 
-        pfootball['players'][oplayer]['Shooting'] + 
-        pfootball['players'][oplayer]['Defending']
+        PFOOTBALL[oplayer]['Speed'] + 
+        PFOOTBALL[oplayer]['Shooting'] + 
+        PFOOTBALL[oplayer]['Defending']
 ):            
            print(f"{player} wins!")
            time.sleep(7)
